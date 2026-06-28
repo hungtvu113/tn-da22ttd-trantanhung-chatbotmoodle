@@ -1,0 +1,6 @@
+INFO:     127.0.0.1:55708 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55711 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55715 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59962 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53244 - "POST /api/chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51419 - "POST /api/chat HTTP/1.1" 200 OK

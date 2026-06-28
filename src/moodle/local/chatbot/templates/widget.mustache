@@ -1,0 +1,79 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template local_chatbot/widget
+
+    Floating chat widget injected on every page.
+
+    Context variables required for this template:
+    * userid - int, the logged in user id
+    * userfullname - string, the user full name (used in greeting)
+
+    Example context (json):
+    {
+        "userid": 2,
+        "userfullname": "Nguyen Van A"
+    }
+}}
+<div id="local-chatbot-root" data-userid="{{userid}}" data-userfullname="{{userfullname}}">
+    <button type="button"
+            id="local-chatbot-launcher"
+            class="local-chatbot-launcher"
+            aria-label="{{#str}}widget_open, local_chatbot{{/str}}"
+            title="{{#str}}widget_open, local_chatbot{{/str}}">
+        <i class="fa fa-comments" aria-hidden="true"></i>
+    </button>
+
+    <div id="local-chatbot-panel" class="local-chatbot-panel" hidden aria-hidden="true" role="dialog"
+         aria-labelledby="local-chatbot-title">
+        <header class="local-chatbot-header">
+            <div class="local-chatbot-header-text">
+                <div id="local-chatbot-title" class="local-chatbot-title">
+                    {{#str}}widget_title, local_chatbot{{/str}}
+                </div>
+                <div class="local-chatbot-subtitle">
+                    {{#str}}widget_subtitle, local_chatbot{{/str}}
+                </div>
+            </div>
+            <button type="button"
+                    id="local-chatbot-close"
+                    class="local-chatbot-close"
+                    aria-label="{{#str}}widget_close, local_chatbot{{/str}}">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+        </header>
+
+        <div id="local-chatbot-messages" class="local-chatbot-messages" aria-live="polite">
+            <div class="local-chatbot-msg local-chatbot-msg-bot">
+                <div class="local-chatbot-bubble">
+                    {{#str}}widget_welcome, local_chatbot{{/str}}
+                </div>
+            </div>
+        </div>
+
+        <form id="local-chatbot-form" class="local-chatbot-form" autocomplete="off">
+            <textarea id="local-chatbot-input"
+                      class="local-chatbot-input"
+                      rows="1"
+                      placeholder="{{#str}}widget_placeholder, local_chatbot{{/str}}"
+                      aria-label="{{#str}}widget_placeholder, local_chatbot{{/str}}"></textarea>
+            <button type="submit" class="local-chatbot-send" aria-label="{{#str}}widget_send, local_chatbot{{/str}}">
+                <i class="fa fa-paper-plane" aria-hidden="true"></i>
+            </button>
+        </form>
+    </div>
+</div>

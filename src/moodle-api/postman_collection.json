@@ -1,0 +1,249 @@
+{
+  "info": {
+    "name": "Moodle API Gateway",
+    "description": "API Gateway cho Chatbot RAG tích hợp Moodle\n\nĐể sử dụng:\n1. Import collection này vào Postman\n2. Cập nhật biến {{api_key}} trong Environment\n3. Đảm bảo Laravel server đang chạy",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8000/api/v1/moodle",
+      "type": "string"
+    },
+    {
+      "key": "api_key",
+      "value": "chatbot_key_123",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "1. Get All Courses",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-API-Key",
+            "value": "{{api_key}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/courses",
+          "host": ["{{base_url}}"],
+          "path": ["courses"]
+        },
+        "description": "Lấy danh sách tất cả courses trong Moodle"
+      },
+      "response": []
+    },
+    {
+      "name": "2. Search Courses",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-API-Key",
+            "value": "{{api_key}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/courses?search=IT",
+          "host": ["{{base_url}}"],
+          "path": ["courses"],
+          "query": [
+            {
+              "key": "search",
+              "value": "IT",
+              "description": "Tìm kiếm theo shortname, fullname, hoặc idnumber"
+            }
+          ]
+        },
+        "description": "Tìm kiếm courses theo keyword"
+      },
+      "response": []
+    },
+    {
+      "name": "3. Get Course Students",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-API-Key",
+            "value": "{{api_key}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/courses/2/students",
+          "host": ["{{base_url}}"],
+          "path": ["courses", "2", "students"]
+        },
+        "description": "Lấy danh sách sinh viên trong course (chỉ role student)"
+      },
+      "response": []
+    },
+    {
+      "name": "4. Get Course Grades",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-API-Key",
+            "value": "{{api_key}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/courses/2/grades",
+          "host": ["{{base_url}}"],
+          "path": ["courses", "2", "grades"]
+        },
+        "description": "Lấy điểm của tất cả sinh viên trong course"
+      },
+      "response": []
+    },
+    {
+      "name": "5. Get Course Competencies (CLO/PLO)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-API-Key",
+            "value": "{{api_key}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/courses/2/competencies",
+          "host": ["{{base_url}}"],
+          "path": ["courses", "2", "competencies"]
+        },
+        "description": "Lấy danh sách CLO/PLO được gán vào course"
+      },
+      "response": []
+    },
+    {
+      "name": "6. Get Course Competency Results",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-API-Key",
+            "value": "{{api_key}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/courses/2/competency-results",
+          "host": ["{{base_url}}"],
+          "path": ["courses", "2", "competency-results"]
+        },
+        "description": "Lấy kết quả CLO của tất cả sinh viên trong course"
+      },
+      "response": []
+    },
+    {
+      "name": "7. Course Traceback",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-API-Key",
+            "value": "{{api_key}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/courses/traceback?search=IT4409",
+          "host": ["{{base_url}}"],
+          "path": ["courses", "traceback"],
+          "query": [
+            {
+              "key": "search",
+              "value": "IT4409",
+              "description": "Mã môn học hoặc tên môn học"
+            }
+          ]
+        },
+        "description": "Truy xuất ngược từ mã môn học lên category hierarchy"
+      },
+      "response": []
+    },
+    {
+      "name": "8. Get Course Full Results",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-API-Key",
+            "value": "{{api_key}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/courses/2/full-results",
+          "host": ["{{base_url}}"],
+          "path": ["courses", "2", "full-results"]
+        },
+        "description": "Lấy tổng hợp đầy đủ: course info, students, grades, assignments, CLO"
+      },
+      "response": []
+    },
+    {
+      "name": "9. Get Student Results",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-API-Key",
+            "value": "{{api_key}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/students/student01/results",
+          "host": ["{{base_url}}"],
+          "path": ["students", "student01", "results"]
+        },
+        "description": "Lấy kết quả học tập của một sinh viên (tất cả courses)"
+      },
+      "response": []
+    },
+    {
+      "name": "10. Test Invalid API Key",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-API-Key",
+            "value": "invalid_key",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/courses",
+          "host": ["{{base_url}}"],
+          "path": ["courses"]
+        },
+        "description": "Test với API key không hợp lệ (expect 401)"
+      },
+      "response": []
+    },
+    {
+      "name": "11. Test Missing API Key",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/courses",
+          "host": ["{{base_url}}"],
+          "path": ["courses"]
+        },
+        "description": "Test không có API key header (expect 401)"
+      },
+      "response": []
+    }
+  ]
+}

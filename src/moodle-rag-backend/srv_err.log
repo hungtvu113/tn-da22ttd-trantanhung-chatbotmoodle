@@ -1,0 +1,13 @@
+INFO:     Started server process [20352]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
+INFO HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO HTTP Request: GET http://localhost:8000/api/v1/moodle/students/sinhvien1/courses "HTTP/1.1 200 OK"
+INFO HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+INFO HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO HTTP Request: POST https://integrate.api.nvidia.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO HTTP Request: GET http://localhost:8000/api/v1/moodle/courses "HTTP/1.1 500 Internal Server Error"
+WARNING Lỗi truy vấn Gateway: Gateway trả HTTP 500 cho http://localhost:8000/api/v1/moodle/courses: ﻿{"success":false,"message":"cURL error 28: Operation timed out after 30014 milliseconds with 0 bytes received (see https:\/\/curl.haxx.se\/libcurl\/c\/libcurl-errors.html) for http:\/\/localhost:8080\/webservice\/rest\/server.php"}

@@ -1,0 +1,1 @@
+a:5:{s:6:"apikey";s:26:"moodle-chatbot-secret-2026";s:6:"apiurl";s:30:"http://localhost:8001/api/chat";s:7:"enabled";s:1:"1";s:7:"timeout";s:2:"90";s:7:"version";s:10:"2026062800";}
