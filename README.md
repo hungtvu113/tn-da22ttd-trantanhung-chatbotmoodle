@@ -2,7 +2,7 @@
 
 **Sinh viên thực hiện:** Trần Tấn Hưng — MSSV: 110122081 — Lớp: DA22TTD  
 **Giảng viên hướng dẫn:** ThS. Trịnh Quốc Việt  
-**Trường:** Đại học Cần Thơ — Khoa Công nghệ thông tin & Truyền thông
+**Trường:** Đại học Trà Vinh — Công nghệ thông tin
 
 ---
 
@@ -282,5 +282,5 @@ Khi chạy hệ thống, cần bật theo thứ tự:
 ## Tác giả
 
 **Trần Tấn Hưng** — MSSV: 110122081 — Lớp DA22TTD  
-Khoa Công nghệ thông tin & Truyền thông — Đại học Cần Thơ  
+Công nghệ thông tin — Đại học Trà Vinh  
 Giảng viên hướng dẫn: **ThS. Trịnh Quốc Việt**
